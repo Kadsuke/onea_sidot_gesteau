@@ -1,0 +1,159 @@
+/*
+*
+*Entity
+*
+*/
+entity Prevision{
+	nbLatrine Integer required,
+    nbPuisard Integer required,
+    nbPublic Integer required,
+    nbScolaire Integer required,
+}
+entity FicheSuiviOuvrage{
+    prjAppuis String required,
+    nomBenef String required,
+    prenomBenef String required,
+    professionBenef String required,
+    nbUsagers Long required,
+    contacts String required,
+    longitude Float required,
+    latitude Float required,
+    dateRemiseDevis Instant required,
+    dateDebutTravaux Instant required,
+    dateFinTravaux Instant required,
+    rue String,
+    porte String,
+    coutMenage String required,
+    subvOnea Integer required,
+    subvProjet Integer required,
+    autreSubv Integer required,
+    porte Integer required,
+    toles Integer required,
+    animateur String required,
+    superviseur String required,
+    controleur String required,
+}
+entity SourceApprovEp{
+	libelle String required
+}
+entity TypeHabitation{
+	libelle String required
+}
+entity ModeEvacuationEauUsee{
+	libelle String required
+}
+entity ModeEvacExcreta{
+	libelle String required
+}
+entity Prefabricant{
+	libelle String required
+}
+entity Macon{
+	libelle String required
+}
+entity NatureOuvrage{
+	libelle String required
+}
+entity Annee{
+	libelle String required
+}
+entity DirectionRegionale{
+	libelle String required,
+    responsable String required,
+    contact String required
+}
+entity CentreRegroupement{
+	libelle String required,
+    responsable String required,
+    contact String required
+}
+entity Centre{
+	libelle String required,
+    responsable String required,
+    contact String required
+}
+/*
+*
+*Relationship
+*
+*/
+relationship OneToMany {
+DirectionRegionale to CentreRegroupement
+}
+relationship OneToMany {
+CentreRegroupement to Centre
+}
+relationship OneToOne {
+Prevision{annee} to Annee{prevision}
+}
+relationship OneToOne {
+Prevision{centre} to Centre{prevision}
+}
+relationship OneToMany{
+Prevision to FicheSuiviOuvrage{prevision}
+}
+relationship OneToMany {
+NatureOuvrage to FicheSuiviOuvrage {natureouvrage}
+}
+relationship OneToMany {
+TypeHabitation to FicheSuiviOuvrage {typehabitation}
+}
+relationship OneToMany {
+SourceApprovEp to FicheSuiviOuvrage {sourceapprovep}
+}
+relationship OneToMany {
+ModeEvacuationEauUsee to FicheSuiviOuvrage {modeevacuationeauusee}
+}
+relationship OneToMany {
+ModeEvacExcreta to FicheSuiviOuvrage {modeevacexcreta}
+}
+relationship OneToMany {
+Macon to FicheSuiviOuvrage {macon}
+}
+relationship OneToMany {
+Prefabricant to FicheSuiviOuvrage {prefabricant}
+}
+/*
+*Dto mapstruct
+*Service serviceClass
+*Paginate pagination
+*/
+service * with serviceClass
+dto * with mapstruct
+paginate * with pagination
+/*
+*
+*Filter
+*
+*/
+filter DirectionRegionale
+filter CentreRegroupement
+filter Centre
+filter Prevision
+filter Annee
+filter NatureOuvrage
+filter TypeHabitation
+filter SourceApprovEp
+filter ModeEvacExcreta
+filter ModeEvacuationEauUsee
+filter Macon
+filter Prefabricant
+filter FicheSuiviOuvrage
+/*
+*
+*Microservice
+*
+*/
+microservice DirectionRegionale with gesteau
+microservice CentreRegroupement with gesteau
+microservice Centre with gesteau
+microservice Prevision with gesteau
+microservice Annee with gesteau
+microservice NatureOuvrage with gesteau
+microservice TypeHabitation with gesteau
+microservice SourceApprovEp with gesteau
+microservice ModeEvacuationEauUsee with gesteau
+microservice ModeEvacExcreta with gesteau
+microservice Macon with gesteau
+microservice Prefabricant with gesteau
+microservice FicheSuiviOuvrage with gesteau
