@@ -1,0 +1,60 @@
+{
+  "name": "Prevision",
+  "fields": [
+    {
+      "fieldName": "nbLatrine",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbPuisard",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbPublic",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbScolaire",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "annee",
+      "otherEntityRelationshipName": "prevision",
+      "relationshipName": "annee",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "centre",
+      "otherEntityRelationshipName": "prevision",
+      "relationshipName": "centre",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ficheSuiviOuvrage",
+      "otherEntityRelationshipName": "prevision",
+      "relationshipName": "ficheSuiviOuvrage"
+    }
+  ],
+  "entityTableName": "prevision",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gesteau",
+  "clientRootFolder": "gesteau",
+  "databaseType": "sql",
+  "changelogDate": "20210421085923"
+}

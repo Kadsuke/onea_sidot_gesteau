@@ -40,7 +40,23 @@
     "pages": [],
     "creationTimestamp": 1618995498894,
     "jwtSecretKey": "MjQ1OTRkMGVkYzNiNDRlNTA4NjFlMGNmZTM4MDVhYjk3M2M3OWY3Y2VkNjk5YWVmZWZjMDk4YTRiYzViODBkMjY4YTNkNjBlZjIyZGU5MmJhOGZjNjM2NGFiZGM2NThkZjVhM2U4N2JjZTlmOTI5MTJmZDUxZTg3NjUwOWIxMmI=",
-    "reactive": false
+    "reactive": false,
+    "entities": [
+      "Prevision",
+      "FicheSuiviOuvrage",
+      "SourceApprovEp",
+      "TypeHabitation",
+      "ModeEvacuationEauUsee",
+      "ModeEvacExcreta",
+      "Prefabricant",
+      "Macon",
+      "NatureOuvrage",
+      "Annee",
+      "DirectionRegionale",
+      "CentreRegroupement",
+      "Centre"
+    ],
+    "lastLiquibaseTimestamp": 1618995575000
   },
   "git-provider": "GitHub",
   "git-company": "Kadsuke",
