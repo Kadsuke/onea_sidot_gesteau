@@ -1,0 +1,31 @@
+{
+  "name": "Macon",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ficheSuiviOuvrage",
+      "otherEntityRelationshipName": "macon",
+      "relationshipName": "ficheSuiviOuvrage"
+    }
+  ],
+  "entityTableName": "macon",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gesteau",
+  "clientRootFolder": "gesteau",
+  "databaseType": "sql",
+  "changelogDate": "20210421085930"
+}

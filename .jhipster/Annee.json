@@ -1,0 +1,32 @@
+{
+  "name": "Annee",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "prevision",
+      "otherEntityRelationshipName": "annee",
+      "relationshipName": "prevision",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "annee",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gesteau",
+  "clientRootFolder": "gesteau",
+  "databaseType": "sql",
+  "changelogDate": "20210421085932"
+}

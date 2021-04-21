@@ -1,0 +1,48 @@
+{
+  "name": "Centre",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "responsable",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contact",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "prevision",
+      "otherEntityRelationshipName": "centre",
+      "relationshipName": "prevision",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "centreRegroupement",
+      "otherEntityRelationshipName": "centre",
+      "relationshipName": "centreRegroupement"
+    }
+  ],
+  "entityTableName": "centre",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gesteau",
+  "clientRootFolder": "gesteau",
+  "databaseType": "sql",
+  "changelogDate": "20210421085935"
+}

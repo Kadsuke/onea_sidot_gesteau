@@ -1,0 +1,31 @@
+{
+  "name": "ModeEvacuationEauUsee",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ficheSuiviOuvrage",
+      "otherEntityRelationshipName": "modeevacuationeauusee",
+      "relationshipName": "ficheSuiviOuvrage"
+    }
+  ],
+  "entityTableName": "mode_evacuation_eau_usee",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gesteau",
+  "clientRootFolder": "gesteau",
+  "databaseType": "sql",
+  "changelogDate": "20210421085927"
+}
